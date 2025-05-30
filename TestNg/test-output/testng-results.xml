@@ -1,35 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="6" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-22T17:34:21 IST" name="demo" finished-at="2024-07-22T17:34:21 IST" duration-ms="40">
+  <suite started-at="2025-03-19T15:26:06 IST" name="Suite" finished-at="2025-03-19T15:26:06 IST" duration-ms="119">
     <groups>
+      <group name="smoke">
+        <method signature="Sands_department.calibration_Lab()[pri:0, instance:test.Sands_department@3daa422a]" name="calibration_Lab" class="test.Sands_department"/>
+        <method signature="Case2.test2()[pri:0, instance:test.Case2@323b36e0]" name="test2" class="test.Case2"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-07-22T17:34:21 IST" name="test" finished-at="2024-07-22T17:34:21 IST" duration-ms="40">
+    <test started-at="2025-03-19T15:26:06 IST" name="Test" finished-at="2025-03-19T15:26:06 IST" duration-ms="36">
+      <class name="test.Sands_department">
+        <test-method is-config="true" signature="RandD()[pri:0, instance:test.Sands_department@3daa422a]" started-at="2025-03-19T15:26:06 IST" name="RandD" finished-at="2025-03-19T15:26:06 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandD -->
+        <test-method is-config="true" signature="stores()[pri:0, instance:test.Sands_department@3daa422a]" started-at="2025-03-19T15:26:06 IST" name="stores" finished-at="2025-03-19T15:26:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stores -->
+        <test-method signature="calibration_Lab()[pri:0, instance:test.Sands_department@3daa422a]" started-at="2025-03-19T15:26:06 IST" name="calibration_Lab" finished-at="2025-03-19T15:26:06 IST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- calibration_Lab -->
+        <test-method is-config="true" signature="producation()[pri:0, instance:test.Sands_department@3daa422a]" started-at="2025-03-19T15:26:06 IST" name="producation" finished-at="2025-03-19T15:26:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- producation -->
+        <test-method is-config="true" signature="crm()[pri:0, instance:test.Sands_department@3daa422a]" started-at="2025-03-19T15:26:06 IST" name="crm" finished-at="2025-03-19T15:26:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- crm -->
+      </class> <!-- test.Sands_department -->
+    </test> <!-- Test -->
+    <test started-at="2025-03-19T15:26:06 IST" name="sands2" finished-at="2025-03-19T15:26:06 IST" duration-ms="34">
+      <class name="test.Sands_department2">
+        <test-method signature="collection(java.lang.String)[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="collection" finished-at="2025-03-19T15:26:06 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[www.sands.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- collection -->
+        <test-method signature="ppc()[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="ppc" finished-at="2025-03-19T15:26:06 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ppc -->
+        <test-method signature="dac()[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="dac" finished-at="2025-03-19T15:26:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dac -->
+        <test-method signature="qc()[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="qc" finished-at="2025-03-19T15:26:06 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- qc -->
+        <test-method signature="Hr()[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="Hr" finished-at="2025-03-19T15:26:06 IST" depends-on-methods="test.Sands_department2.ppc, test.Sands_department2.collection" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Hr -->
+        <test-method signature="accounts()[pri:0, instance:test.Sands_department2@2e005c4b]" started-at="2025-03-19T15:26:06 IST" name="accounts" finished-at="2025-03-19T15:26:06 IST" depends-on-methods="test.Sands_department2.Hr" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accounts -->
+      </class> <!-- test.Sands_department2 -->
       <class name="test.Case1">
-        <test-method signature="test1()[pri:0, instance:test.Case1@61230f6a]" started-at="2024-07-22T17:34:21 IST" name="test1" finished-at="2024-07-22T17:34:21 IST" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="name()[pri:0, instance:test.Case1@4567f35d]" started-at="2025-03-19T15:26:06 IST" name="name" finished-at="2025-03-19T15:26:06 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- name -->
+        <test-method signature="test1(java.lang.String)[pri:0, instance:test.Case1@4567f35d]" started-at="2025-03-19T15:26:06 IST" name="test1" finished-at="2025-03-19T15:26:06 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[www.sands.com]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method signature="test2()[pri:0, instance:test.Case1@61230f6a]" started-at="2024-07-22T17:34:21 IST" name="test2" finished-at="2024-07-22T17:34:21 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="aftername()[pri:0, instance:test.Case1@4567f35d]" started-at="2025-03-19T15:26:06 IST" name="aftername" finished-at="2025-03-19T15:26:06 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftername -->
+      </class> <!-- test.Case1 -->
+      <class name="test.Case2">
+        <test-method signature="test1()[pri:0, instance:test.Case2@323b36e0]" started-at="2025-03-19T15:26:06 IST" name="test1" finished-at="2025-03-19T15:26:06 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:test.Case2@323b36e0]" started-at="2025-03-19T15:26:06 IST" name="test2" finished-at="2025-03-19T15:26:06 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method signature="test3()[pri:0, instance:test.Case1@61230f6a]" started-at="2024-07-22T17:34:21 IST" name="test3" finished-at="2024-07-22T17:34:21 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test3 -->
-      </class> <!-- test.Case1 -->
-      <class name="test.Case2">
-        <test-method signature="test1()[pri:0, instance:test.Case2@70e8f8e]" started-at="2024-07-22T17:34:21 IST" name="test1" finished-at="2024-07-22T17:34:21 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method signature="test3()[pri:0, instance:test.Case2@70e8f8e]" started-at="2024-07-22T17:34:21 IST" name="test3" finished-at="2024-07-22T17:34:21 IST" duration-ms="1" status="PASS">
+        <test-method signature="test3()[pri:0, instance:test.Case2@323b36e0]" started-at="2025-03-19T15:26:06 IST" name="test3" finished-at="2025-03-19T15:26:06 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3 -->
       </class> <!-- test.Case2 -->
-    </test> <!-- test -->
-  </suite> <!-- demo -->
+    </test> <!-- sands2 -->
+  </suite> <!-- Suite -->
 </testng-results>

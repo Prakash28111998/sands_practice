@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sands.Stream">
+      <class name="com.simplilearn.mavenproject.Sands">
         <methods>
-          <include name="streammap"/>
+          <include name="cmri"/>
+          <include name="opal"/>
+          <include name="amr_solution"/>
+          <include name="smart_mete"/>
+          <include name="optical_probe"/>
+          <include name="Browser_Lanch"/>
+          <include name="Web_URL"/>
         </methods>
-      </class> <!-- sands.Stream -->
+      </class> <!-- com.simplilearn.mavenproject.Sands -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

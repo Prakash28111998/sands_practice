@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.simplilearn.mavenproject.Meter_testing_Project">
+        <methods>
+          <include name="Stator_Protection_Kit"/>
+          <include name="IRIG_B_Booster"/>
+          <include name="GPS_Wireless_Clock"/>
+          <include name="GPS_Time_Server_GPS_Time_Server_DIN_RAIL"/>
+          <include name="GPS_Time_Server_SYNTIME_GPS_Time_Server"/>
+          <include name="GPS_Clock"/>
+          <include name="NTP_SNTP_Converter"/>
+          <include name="GPS_Standalone_Clock"/>
+          <include name="IRIG_B_RS485_Converter"/>
+          <include name="about_Page"/>
+          <include name="CRUX_Meter_Data_Analytics"/>
+          <include name="HVLWTK"/>
+          <include name="frequency_kilovolte_Mega_displays"/>
+          <include name="product_Meter_testing"/>
+          <include name="cmri"/>
+          <include name="amr_solution"/>
+          <include name="opal"/>
+          <include name="smart_mete"/>
+          <include name="optical_probe"/>
+          <include name="stator"/>
+          <include name="Browser_Lanch"/>
+          <include name="Web_URL"/>
+        </methods>
+      </class> <!-- com.simplilearn.mavenproject.Meter_testing_Project -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

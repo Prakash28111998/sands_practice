@@ -1,0 +1,7 @@
+1734340466342	Extract local variable 'windowHandles'
+1734340510423	Extract local variable 'iterator'
+1734340872211	Extract local variable 'elements'
+1734340984710	Extract local variable 'iterator'
+1734341059846	Extract local variable 'next'
+1734342365560	Extract local variable 'element'
+1734342399917	Extract local variable 'screenshotAs'

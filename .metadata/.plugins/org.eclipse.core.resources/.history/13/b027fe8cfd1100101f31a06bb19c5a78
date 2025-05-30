@@ -1,0 +1,166 @@
+package com.simplilearn.mavenproject;
+
+//import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.sql.Driver;
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+
+import org.checkerframework.checker.units.qual.m;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+public class Sands extends BaseTest {
+	// static WebDriver driver = new EdgeDriver();
+	// FirefoxOptions option ;
+	// static ChromeOptions option = new ChromeOptions();
+
+	WebDriver driver;// = new ChromeDriver();
+
+	Actions a; // = new Actions(driver);
+
+	public void sands_Logo() {
+		driver.findElement(By.cssSelector("div.logo")).isDisplayed();
+	}
+
+	// function utility_solution
+	void utility_solution1() {
+		a.moveToElement(driver.findElement(By.xpath("//a[text()='Utility Solutions']"))).build().perform();
+	}
+
+	public void Product() {
+		utility_solution1();
+		a.moveToElement(driver.findElement(By.xpath("//a[text()='Meter Reading Products']"))).build().perform();
+	}
+
+	@Test
+	void optical_probe() {
+		Product();
+		driver.findElement(By.xpath("//a[text()='Optical Probe']")).click();
+		String text = driver.findElement(By.id("side_column_a_op")).getText();
+		String string = text.split("01")[1].trim();
+
+		System.out.println(string);
+
+		String UP_1001 = driver.findElement(By.id("PG016_R07C01")).getText().toUpperCase();
+		// output text compare
+		String replaceFirst = UP_1001.replace(" (", "\n(");
+
+		System.out.println(replaceFirst);
+		// change to string to arrays list to compare the string
+
+		List<String> stringList = Arrays.asList(string);
+		List<String> replaylist = Arrays.asList(replaceFirst);
+
+		Assert.assertTrue(stringList.containsAll(replaylist));
+
+		Assert.assertEquals(string, replaceFirst);
+
+		driver.findElement(By.cssSelector("div.logo")).isDisplayed();
+		Product();
+	}
+
+	/*
+	 * @BeforeSuite public void Browser_Lanch() { driver =
+	 * SingletonWebDriver.getDriver(); a = new Actions(driver);
+	 */
+		/*
+		 * option = new FirefoxOptions(); // option.addArguments("--incognito");
+		 * option.addArguments("-private"); // driver = new ChromeDriver(option); driver
+		 * = new FirefoxDriver(option); a = new Actions(driver); return new
+		 * FirefoxDriver();
+		 */
+
+	// @BeforeClass
+	/*
+	 * public void Web_URL() {
+	 * 
+	 * driver.manage().window().maximize(); driver.manage().deleteAllCookies(); }
+	 */
+
+	void Short_wait() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
+	}
+
+	@Test
+	// Logo displayed
+	void about_Page() {
+		driver.findElement(By.cssSelector("div.logo")).isDisplayed();
+		driver.findElement(By.xpath("//a[text()='About us']")).click();
+		utility_solution1();
+	}
+
+	@Test
+	void cmri() {
+		Product();
+		driver.findElement(By.xpath("//a[text()='CMRI']")).click();
+		// ja.executeScript("window.scrollBy(0,500)");
+		WebElement Spec = driver.findElement(By.id("PG007_R07C02"));
+		Spec.click();
+
+		assertEquals(All_Url_page.CMRI, driver.getCurrentUrl());
+
+		String ActualTitle = "SPECIFICATIONS";
+		assertEquals(ActualTitle, Spec.getText());
+
+		Spec.isEnabled();
+		WebElement acc = driver.findElement(By.id("PG007_R07C03"));
+		acc.click();
+		String access = "ACCESSORIES";
+		System.out.println(access + acc.isEnabled());
+		assertEquals(access, acc.getText());
+	}
+
+	@Test
+	private void opal() {
+		Product();
+		driver.findElement(By.xpath("//a[text()='OPAL']")).click();
+		assertEquals(All_Url_page.CMRIOPAL, driver.getCurrentUrl());
+
+		sands_Logo();
+
+	}
+
+	@Test
+	private void amr_solution() {
+		Product();
+		optical_probe();
+		driver.findElement(By.linkText("AMR-AMI solutions")).click();
+	}
+
+	@Test
+	private void smart_mete() {
+		Product();
+		driver.findElement(By.linkText("Smart Meter Reading APP")).click();
+		driver.findElement(By.cssSelector("div.logo")).isDisplayed();
+
+	}
+
+	public WebDriver geDriver() {
+		return driver;
+	}
+
+	public Actions geActions() {
+		return a;
+	}
+
+}

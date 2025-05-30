@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="sands2(failed)">
+    <classes>
+      <class name="test.Sands_department2">
+        <methods>
+          <include name="ppc"/>
+          <include name="collection"/>
+          <include name="accounts"/>
+          <include name="Hr"/>
+        </methods>
+      </class> <!-- test.Sands_department2 -->
+      <class name="test.Case1">
+        <methods>
+          <include name="aftername"/>
+          <include name="name"/>
+          <include name="test1"/>
+        </methods>
+      </class> <!-- test.Case1 -->
+    </classes>
+  </test> <!-- sands2(failed) -->
+</suite> <!-- Failed suite [Suite] -->

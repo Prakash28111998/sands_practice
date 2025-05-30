@@ -1,0 +1,93 @@
+ package sands;
+
+import static org.testng.Assert.assertTrue;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.google.common.collect.Streams;
+
+public class Stream {
+		//@Test
+		public void regulr()
+		{
+			ArrayList<String>list = new ArrayList<String>();
+			list.add("Praksh");
+			list.add("praba");
+			list.add("praven");
+			list.add("karthi");
+			list.add("sathis");
+			int count = 0;
+			
+			for(int i=0;i<list.size();i++) {
+				String stram = list.get(i);
+				if (stram.startsWith("P")) {
+					count++;
+				}
+			}
+			System.out.println(count);
+		}
+		//@Test
+		public void stramfilter() {
+			
+			ArrayList<String>list = new ArrayList<String>();
+			list.add("Praksh");
+			list.add("praba");
+			list.add("praven");
+			list.add("karthi");
+			list.add("sathis");
+			//there is no life for indermediant oprtion if there is no terminal opration 
+			//terminal opration execute only if inter opration (filter)retunes true
+			//we can create steam
+			//how to use filter stream api 	
+			long c=  list.stream().filter(s->s.startsWith("p")).count();
+			System.out.println(c);
+
+			long d = java.util.stream.Stream.of("Praksh","praba","Praveen","karthi","sathis").filter(s->
+			{	
+			s.startsWith("p");
+			return true;
+		}).count();
+			System.out.println(d);
+			list.stream().filter(s->s.length()>4).limit(2).forEach(s->System.out.println(s));
+			
+		}
+		@Test
+ public void streammap() {
+			ArrayList<String>list = new ArrayList<String>();
+			list.add("Praksh");
+			list.add("praba");
+			list.add("praven");
+			list.add("karthi");
+			list.add("sathis");
+			
+	 // print names last later as "a"with uppercase
+	 java.util.stream.Stream.of("Praksh","praba","Praveen","karthi","sathis").filter(s->s.endsWith("a")).map(s->s.toUpperCase()).forEach(s->System.out.println(s));
+	 
+	 //print the name with first later "P" with upper case and sorted
+	 List<String> asList = Arrays.asList("Praksh","praba","Praveen","karthi","sathis");
+	 asList.stream().filter(s->s.startsWith("P")).map(s->s.toUpperCase()).sorted().forEach(s->System.out.println(s));
+	 
+	 //Merging two different list
+	 java.util.stream.Stream<String> concat = Streams.concat(list.stream(),asList.stream());
+	 boolean anyMatch = concat.anyMatch(s->s.equalsIgnoreCase("praba"));
+	 System.out.println(anyMatch);
+	 Assert.assertTrue(anyMatch);
+	 List<String> collect =asList.stream().filter(s->s.startsWith("P")).map(s->s.toUpperCase()).collect(Collectors.toList());
+	 System.out.println(collect);
+}
+		
+		private void streamcollect() {
+			// TODO Auto-generated method stub
+
+		}
+		
+		
+}

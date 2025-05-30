@@ -1,0 +1,58 @@
+package com.Udemy.Project;
+
+import static org.testng.Assert.assertTrue;
+
+import java.sql.Driver;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver.Options;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+
+public class Strems_using_sorting_webpage {
+//	static ChromeOptions option = new ChromeOptions();
+//	
+//	static WebDriver driver = new ChromeDriver(option);
+//	
+	
+	public static void main(String[] args) {
+		
+		 ChromeOptions option = new ChromeOptions();
+			option.addArguments("--incognito");
+		 WebDriver driver = new ChromeDriver(option);
+		
+		
+	
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
+		
+		//caputure all webelements into list
+		List<WebElement> veglist = driver.findElements(By.xpath("//tr/td[1]"));
+		
+		//capture text of all webelement in to new (original) list
+		List<String> orginallist = veglist.stream().map(a->a.getText()).collect(Collectors.toList());
+		System.out.println(orginallist);
+		
+		//sort the original list of sorted list 
+		List<String> sortedlist = orginallist.stream().sorted().collect(Collectors.toList());
+		System.out.println(sortedlist);
+		
+		//compare the orginal list vs sorted list
+		Assert.assertTrue(orginallist.containsAll(sortedlist));
+		
+		Stream<WebElement> filter = veglist.stream().filter(s->s.getText().contains("Potato"));
+		System.out.println(filter);
+
+		
+		}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,47 @@
+package flipkart;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class sample1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+//		driver.findElement(By.linkText("Login")).click();
+//		Thread.sleep(500);
+//		driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("8807179674");
+//		driver.findElement(By.xpath("//button[text()='Request OTP']")).click();
+//		Thread.sleep(1000);
+//		for(int i=1;i<=6;i++)
+//		{
+//			driver.findElement(By.xpath("(//input[@class='_2IX_2- _1WRfas'])[i]")).sendKeys("9");
+//		}
+        driver.findElement(By.xpath("(//span[@class='_1XjE3T'])[4]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.linkText("MobileAccessory")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("(//div[@class='_3LU4EM'])[10]")).click();
+        Thread.sleep(1000);
+        WebElement staticDropdown = driver.findElement(By.xpath("(//select[@class='_2YxCDZ'])[1]"));
+        Select dropdown = new Select(staticDropdown);
+        Thread.sleep(1000);
+        dropdown.selectByIndex(1);
+        WebElement staticDropdown1 = driver.findElement(By.xpath("(//select[@class='_2YxCDZ'])[2]"));
+        Select down = new Select(staticDropdown1);
+        Thread.sleep(1000);
+        down.selectByIndex(3);
+        
+		
+		
+	
+
+	}
+
+}

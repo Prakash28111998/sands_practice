@@ -1,0 +1,5 @@
+1733375736578	Extract local variable 'asList'
+1733376289611	Extract local variable 'concat'
+1733376385912	Extract local variable 'anyMatch'
+1733398489424	Extract local variable 'collect'
+1733398955573	Extract local variable 'asList2'
